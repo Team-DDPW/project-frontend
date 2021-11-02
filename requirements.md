@@ -40,5 +40,15 @@ OUT
 
 - user logs in
 - user searches post/ create post
-- user contacts requester via email
+- user contacts requester via app which generates email
 - user logs out
+
+## Non-Functional Requirements
+
+1. Security
+
+- Implement authentication and authorization so that users can control their own data
+
+1. Testability
+
+- Components should be able to be tested and modularized
