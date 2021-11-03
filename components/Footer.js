@@ -16,6 +16,8 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import Copyright from './Copyright';
+
 function Footer() {
   return (
     <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
@@ -30,7 +32,7 @@ function Footer() {
       >
         Something here to give the footer a purpose!
       </Typography>
-      {/* <Copyright /> */}
+      <Copyright />
     </Box>
   );
 }
