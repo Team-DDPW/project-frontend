@@ -1,8 +1,23 @@
 
+import { createTheme } from '@mui/material/styles';
+
+import Layout from '../components/Layout';
+import Heading from '../components/Heading';
+
+
+const theme = createTheme();
+
 export default function Home() {
   return (
-    <>
-    <h1>Home</h1>
-    </>
-  )
+    
+      <Layout>
+
+      <main>
+        <Heading/>
+       
+       
+      </main>
+      </Layout>
+    
+  );
 }
