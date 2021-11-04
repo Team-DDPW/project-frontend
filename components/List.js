@@ -20,7 +20,7 @@ function List() {
           <Grid item key={card} xs={12}>
             <Card
               sx={{
-                height: '100%',
+                height: '12rem',
                 display: 'flex',
                 flexDirection: 'column',
               }}
