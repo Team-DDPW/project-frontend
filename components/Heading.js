@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from 'next/link';
+import Crossimage from '../components/Carousel';
 
 function Heading() {
   return (
@@ -30,9 +31,7 @@ function Heading() {
           color="text.secondary"
           paragraph
         >
-          Something short and leading about the collection below—its contents,
-          the creator, etc. Make it short and sweet, but not too short so folks
-          don&apos;t simply skip over it entirely.
+          Something short and leading about the collection
         </Typography>
         <Stack
           sx={{ pt: 4 }}
@@ -40,13 +39,14 @@ function Heading() {
           spacing={2}
           justifyContent="center"
         >
-          <Button variant="contained">
+          <Button variant="outlined">
             <Link href="/listings" variant="body2">
-              Main call to action
+              Listings
             </Link>
           </Button>
           <Button variant="outlined">Secondary action</Button>
         </Stack>
+        <Crossimage />
       </Container>
     </Box>
   );
