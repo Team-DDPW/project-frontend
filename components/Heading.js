@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import Link from 'next/link';
 
 function Heading() {
   return (
@@ -39,7 +40,11 @@ function Heading() {
           spacing={2}
           justifyContent="center"
         >
-          <Button variant="contained">Main call to action</Button>
+          <Button variant="contained">
+            <Link href="/listings" variant="body2">
+              Main call to action
+            </Link>
+          </Button>
           <Button variant="outlined">Secondary action</Button>
         </Stack>
       </Container>
