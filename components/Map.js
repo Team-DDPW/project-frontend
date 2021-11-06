@@ -13,7 +13,7 @@ const center = {
 
 function Map() {
   return (
-    <LoadScript googleMapsApiKey="">
+    <LoadScript googleMapsApiKey="AIzaSyC5BvRIbwnwfsZiON0Pg8W_KUrSLJ5cFoQ">
       <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={5}>
         {/* Child components, such as markers, info windows, etc. */}
         <Marker
@@ -29,5 +29,3 @@ function Map() {
 }
 
 export default Map;
-
-
