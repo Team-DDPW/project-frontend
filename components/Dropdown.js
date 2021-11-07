@@ -4,6 +4,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import axios from 'axios';
+import destinations from '../assets/state.json';
 
 function Dropdown() {
   const [origins, setOrigins] = useState([]);
@@ -25,7 +26,7 @@ function Dropdown() {
     } catch (err) {}
   });
 
-  const destinations = ['Nepal', 'Ethopia'];
+  // const destinations = ['Nepal', 'Ethopia'];
   // const origins = ['Texas', 'Washington'];
   console.log(origins);
   return (
@@ -40,9 +41,9 @@ function Dropdown() {
           onClick={() => fetchOrigins()}
         >
           <option aria-label="None" value="" />
-          {origins.map((origin) => {
-            <option>{origin}</option>;
-          })}
+          {Object.keys(origins).map((key, i) => (
+            <option>{origins[key]}</option>
+          ))}
         </Select>
       </FormControl>
       <FormControl sx={{ m: 3, minWidth: 120 }}>
@@ -55,8 +56,8 @@ function Dropdown() {
         >
           <option aria-label="None" value="" />
 
-          {destinations.map((destination) => (
-            <option value={1}>{destination}</option>
+          {Object.keys(destinations).map((key, i) => (
+            <option>{destinations[key]}</option>
           ))}
         </Select>
       </FormControl>

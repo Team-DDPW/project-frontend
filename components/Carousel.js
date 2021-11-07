@@ -5,7 +5,7 @@ import cargo2 from '../assets/cargo3.PNG';
 
 function Crossimage() {
   return (
-    <div style={{ display: 'flex', width: 500, padding: 30 }}>
+    <div style={{ display: 'flex', width: 500, padding: 30, margin: 'auto' }}>
       <Carousel>
         <Carousel.Item interval={1000}>
           <img

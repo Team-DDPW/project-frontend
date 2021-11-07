@@ -16,13 +16,14 @@ function Heading() {
         pb: 6,
       }}
     >
-      <Container maxWidth="sm">
+      <Container maxWidth="lg">
         <Dropdown />
         <Typography
           variant="h5"
-          align="center"
+          alignContent="center"
           color="text.secondary"
           paragraph
+          margin = 'auto'
         ></Typography>
         <Stack
           sx={{ pt: 4 }}
