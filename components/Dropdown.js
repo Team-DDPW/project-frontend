@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -8,37 +8,26 @@ import axios from 'axios';
 function Dropdown() {
   const [origins, setOrigins] = useState([]);
 
-  useEffect(() => {
-    fetchOrigins();
-  }, []);
-  useEffect(() => {
-    console.log(origins);
-  }, [origins]);
-  const fetchOrigins = async () => {
-    const response = await axios(
-      'https://countries-cities.p.rapidapi.com/location/country/list'
-    );
-    setOrigins(response.data.countries);
-  };
-  // const options = {
-  //   method: 'GET',
-  //   url: 'https://countries-cities.p.rapidapi.com/location/country/list',
-  //   headers: {
-  //     'x-rapidapi-host': 'countries-cities.p.rapidapi.com',
-  //     'x-rapidapi-key': env('SECRET_KEY'),
-  //   },
-  // };
+  const apiUrl = 'https://countries-cities.p.rapidapi.com/location';
+  const authAxios = axios.create({
+    baseURL: apiUrl,
+    headers: {
+      'x-rapidapi-host': 'countries-cities.p.rapidapi.com',
+      'x-rapidapi-key': '',
+    },
+  });
 
-  // axios
-  //   .request(options)
-  //   .then(function (response) {
-  //     console.log('countries', response.data.countries);
-  //   })
-  //   .catch(function (error) {
-  //     console.error(error);
-  //   });
+  const fetchOrigins = useCallback(async () => {
+    try {
+      const response = await authAxios.get(`/country/list`);
+      console.log(response.data.countries);
+      setOrigins(response.data.countries);
+    } catch (err) {}
+  });
+
   const destinations = ['Nepal', 'Ethopia'];
   // const origins = ['Texas', 'Washington'];
+  console.log(origins);
   return (
     <div>
       <FormControl sx={{ m: 3, minWidth: 120 }}>
@@ -48,11 +37,12 @@ function Dropdown() {
           defaultValue=""
           id="grouped-native-select"
           label="Grouping"
+          onClick={() => fetchOrigins()}
         >
           <option aria-label="None" value="" />
-
-          {origins &&
-            origins.map((origin) => <option value={1}>{origin}</option>)}
+          {origins.map((origin) => {
+            <option>{origin}</option>;
+          })}
         </Select>
       </FormControl>
       <FormControl sx={{ m: 3, minWidth: 120 }}>
