@@ -7,27 +7,25 @@ import Image from 'next/image';
 import { Button } from '@mui/material';
 import Link from 'next/link';
 import LogoutButton from './LogoutButton';
+import { useAuth } from '../contexts/auth';
 
 function Header() {
+  const { user, logout } = useAuth();
+
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/">FastEx</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto"></Nav>
             <Nav>
-              <Button>
-                <Link href="/signin" variant="body2">
-                  Login
-                </Link>
-              </Button>
-              <LogoutButton />
               <Post />
               <Navbar.Brand href="/signin">
                 <FaUser />
               </Navbar.Brand>
+              {user && <LogoutButton />}
             </Nav>
           </Navbar.Collapse>
         </Container>
