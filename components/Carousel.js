@@ -1,32 +1,32 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
-import cargo2 from '../assets/cargo2.jpeg';
+import cargo2 from '../assets/cargo3.PNG';
 
 function Crossimage() {
   return (
-    <div style={{ display: 'block', width: 700, padding: 30 }}>
+    <div style={{ display: 'flex', width: 500, padding: 30, margin: 'auto' }}>
       <Carousel>
-        <Carousel.Item interval={1500}>
-          <img
-            alt="Card image cap"
-            class="card-img-top embed-responsive-item"
-            src={cargo2}
-          />
-
-          <Carousel.Caption>
-            <p>Sample Text for Image One</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item interval={500}>
+        <Carousel.Item interval={1000}>
           <img
             className="d-block w-100"
-            src="https://media.geeksforgeeks.org/wp-content/uploads/20210425122716/1-300x115.png"
+            src="https://p.kindpng.com/picc/s/665-6655811_advancements-in-the-quality-of-courier-delivery-viame.png"
+            alt="Third slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item interval={1000}>
+          <img
+            className="d-block w-100"
+            src="https://p.kindpng.com/picc/s/665-6655811_advancements-in-the-quality-of-courier-delivery-viame.png"
             alt="Image Two"
           />
-          <Carousel.Caption>
-            <p>Sample Text for Image Two</p>
-          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item interval={1000}>
+          <img
+            className="d-block w-100"
+            src="https://p.kindpng.com/picc/s/665-6655811_advancements-in-the-quality-of-courier-delivery-viame.png"
+            alt="Image Two"
+          />
         </Carousel.Item>
       </Carousel>
     </div>
