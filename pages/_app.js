@@ -1,10 +1,10 @@
-import '../styles/globals.css';
-import CssBaseline from '@mui/material/CssBaseline';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import React from 'react';
+import { CssBaseline, ThemeProvider, createTheme } from '@material-ui/core';
 
 const theme = createTheme({});
 
 function MyApp({ Component, pageProps }) {
+  
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -14,5 +14,4 @@ function MyApp({ Component, pageProps }) {
     </>
   );
 }
-
 export default MyApp;
