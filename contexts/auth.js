@@ -35,15 +35,18 @@ export function AuthProvider(props) {
       },
     };
     setState((prevState) => ({ ...prevState, ...newState }));
+    console.log('state.tokens', state.tokens);
     router.push('/');
   }
 
   function logout() {
+    console.log('line 42', state.tokens);
     const newState = {
       tokens: null,
       user: null,
     };
     setState((prevState) => ({ ...prevState, ...newState }));
+    console.log('line 48', state.tokens);
   }
 
   return (

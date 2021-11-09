@@ -18,6 +18,7 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import Post from '../components/Post';
 import { Button } from '@mui/material';
 import Link from 'next/link';
+import LogoutButton from './LogoutButton';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -231,7 +232,7 @@ export default function Header() {
           Login
         </Link>
       </Button>
-
+      <LogoutButton />
       {renderMobileMenu}
       {renderMenu}
     </Box>
