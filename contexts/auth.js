@@ -4,7 +4,8 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
-const tokenUrl = baseUrl + '/api/token/';
+const tokenUrl = baseUrl + 'api/token/';
+const registerUrl = baseUrl + 'accounts/register';
 
 const AuthContext = createContext();
 
@@ -20,13 +21,14 @@ export function AuthProvider(props) {
     user: null,
     login,
     logout,
+    signup,
   });
   const router = useRouter();
 
   async function login(email, password) {
     const response = await axios.post(tokenUrl, { email, password });
     console.log('line 25:', response.data);
-    const decodedAccess = jwt.decode(response.data.access);
+    const decodedAccess = await jwt.decode(response.data.access);
     const newState = {
       tokens: response.data,
       user: {
@@ -37,6 +39,18 @@ export function AuthProvider(props) {
     setState((prevState) => ({ ...prevState, ...newState }));
     console.log('state.tokens', state.tokens);
     router.push('/');
+  }
+
+  async function signup(email, password, first_name, last_name) {
+    console.log('line 45: ', email, password, first_name, last_name);
+    console.log('register url:', registerUrl)
+    const response = await axios.post(registerUrl, {
+      email,
+      password,
+      // first_name,
+      // last_name,
+    });
+    console.log('response.data: ', response.data);
   }
 
   function logout() {
