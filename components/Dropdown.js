@@ -14,7 +14,7 @@ function Dropdown() {
     baseURL: apiUrl,
     headers: {
       'x-rapidapi-host': 'countries-cities.p.rapidapi.com',
-      'x-rapidapi-key': '1dc3b3cbf7mshf2b32513b562403p1b4a2ejsn261b834ff124',
+      'x-rapidapi-key': '',
     },
   });
 
