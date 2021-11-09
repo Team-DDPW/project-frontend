@@ -2,46 +2,37 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+// import Container from '@mui/material/Container';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import Link from 'next/link';
 import Crossimage from '../components/Carousel';
 import Dropdown from '../components/Dropdown';
+import LogoImage from '../assets/cargo2.jpeg';
+
+import Cardtemp from './Cardtemplate'
 
 function Heading() {
   return (
-    <Box
-      sx={{
-        bgcolor: 'background.paper',
-        pt: 8,
-        pb: 6,
-      }}
-    >
-      
-      <Container maxWidth="lg">
+    <Container maxWidth="lg">
+      <div
+        style={{
+          backgroundImage: "url(" + `${require("../assets/cargo2.jpeg")}` + ")",
+          width: "100%",
+          height:"100%",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover"
+        }}
+      ></div>
+        {/* <Image
+        src="/cargo.jpg"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="bottom center"
+      /> */}
+
         <Dropdown />
-        <Typography
-          variant="h5"
-          alignContent="center"
-          color="text.secondary"
-          paragraph
-          margin = 'auto'
-        ></Typography>
-        <Stack
-          sx={{ pt: 4 }}
-          direction="row"
-          spacing={2}
-          justifyContent="center"
-        >
-          <Button variant="outlined">
-            <Link href="/listings" variant="body2">
-              Listings
-            </Link>
-          </Button>
-          <Button variant="outlined">Secondary action</Button>
-        </Stack>
         <Crossimage />
-      </Container>
-    </Box>
+    </Container>
   );
 }
 

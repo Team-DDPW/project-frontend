@@ -12,13 +12,6 @@ function Layout({ children }) {
       <Header />
       {children}
       <Footer />
-      {/* <Image
-        src="/cargo.jpg"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="bottom center"
-        z-index='-1'
-      /> */}
     </div>
   );
 }
