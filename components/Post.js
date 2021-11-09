@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
-import Date from '../components/Date';
+import Date from './Date';
 
 function Post() {
   const [show, setShow] = useState(false);

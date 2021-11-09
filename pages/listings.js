@@ -12,12 +12,12 @@ function Listings() {
     <Layout>
       <StickyProvider>
         <Grid container spacing={4}>
-          <Grid item xs={4}>
+          <Grid item lg={4}>
             <List />
           </Grid>
           <div ref={container}>
             <Sticky container={container}>
-              <Grid item xs={8}>
+              <Grid item lg={8}>
                 <Map />
               </Grid>
             </Sticky>
@@ -29,3 +29,6 @@ function Listings() {
 }
 
 export default Listings;
+
+
+
