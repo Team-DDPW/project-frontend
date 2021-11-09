@@ -9,6 +9,8 @@ import {
   Button,
 } from '@mui/material';
 import Link from 'next/link';
+import { FaEnvelope } from 'react-icons/fa';
+import Sendemail from './Sendemail';
 
 function List() {
   const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -44,8 +46,10 @@ function List() {
                 <Typography>
                   This is a media card. You can use this section to describe the
                   content.
+                  <Sendemail />
                 </Typography>
               </CardContent>
+
               <CardActions>
                 <Button size="small">View</Button>
                 <Button size="small">Edit</Button>

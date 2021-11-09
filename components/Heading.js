@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from 'next/link';
 import Crossimage from '../components/Carousel';
+import Dropdown from '../components/Dropdown';
 
 function Heading() {
   return (
@@ -15,24 +16,16 @@ function Heading() {
         pb: 6,
       }}
     >
-      <Container maxWidth="sm">
-        <Typography
-          component="h1"
-          variant="h2"
-          align="center"
-          color="text.primary"
-          gutterBottom
-        >
-          Album layout
-        </Typography>
+      
+      <Container maxWidth="lg">
+        <Dropdown />
         <Typography
           variant="h5"
-          align="center"
+          alignContent="center"
           color="text.secondary"
           paragraph
-        >
-          Something short and leading about the collection
-        </Typography>
+          margin = 'auto'
+        ></Typography>
         <Stack
           sx={{ pt: 4 }}
           direction="row"

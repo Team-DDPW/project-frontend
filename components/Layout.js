@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
+import Image from 'next/image';
 
 function Layout({ children }) {
   return (
@@ -11,6 +12,13 @@ function Layout({ children }) {
       <Header />
       {children}
       <Footer />
+      {/* <Image
+        src="/cargo.jpg"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="bottom center"
+        z-index='-1'
+      /> */}
     </div>
   );
 }

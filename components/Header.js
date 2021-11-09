@@ -1,35 +1,39 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import React from 'react';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { FaUser } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Post from '../components/Post';
+import Image from 'next/image';
+import { Button } from '@mui/material';
 import Link from 'next/link';
+import LogoutButton from './LogoutButton';
 
-export default function Header() {
+function Header() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            FastEx
-          </Typography>
-          <Button color="inherit">
-            <Link href="/signin">Sign in</Link>
-          </Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <>
+      <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+        <Container>
+          <Navbar.Brand href="/">FastEx</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto"></Nav>
+            <Nav>
+              <Button>
+                <Link href="/signin" variant="body2">
+                  Login
+                </Link>
+              </Button>
+              <LogoutButton />
+              <Post />
+              <Navbar.Brand href="/signin">
+                <FaUser />
+              </Navbar.Brand>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 }
+
+export default Header;
