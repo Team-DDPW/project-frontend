@@ -12,28 +12,17 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Copyright from '../components/Copyright';
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { useAuth } from '../contexts/auth';
+// import { useRouter } from 'next/router';
 
 const theme = createTheme();
 
-export default function SignInSide() {
+export default function SignIn() {
+  const { login } = useAuth();
+  // const router = useRouter();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -42,6 +31,8 @@ export default function SignInSide() {
       email: data.get('email'),
       password: data.get('password'),
     });
+    login(data.get('email'), data.get('password'));
+    // router.push('/');
   };
 
   return (
@@ -130,7 +121,7 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
               </Grid>
-              <Copyright sx={{ mt: 5 }} />
+              <Copyright sx={{ mt: '10' }} />
             </Box>
           </Box>
         </Grid>

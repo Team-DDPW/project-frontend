@@ -16,6 +16,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Post from '../components/Post';
+import { Button } from '@mui/material';
+import Link from 'next/link';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -224,6 +226,12 @@ export default function Header() {
           </Box>
         </Toolbar>
       </AppBar>
+      <Button>
+        <Link href="/signin" variant="body2">
+          Login
+        </Link>
+      </Button>
+
       {renderMobileMenu}
       {renderMenu}
     </Box>
