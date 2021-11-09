@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from './Header';
-import Footer from './Footer';
+
 import Image from 'next/image';
 
 function Layout({ children }) {
@@ -11,7 +11,7 @@ function Layout({ children }) {
       </Head>
       <Header />
       {children}
-      <Footer />
+
     </div>
   );
 }

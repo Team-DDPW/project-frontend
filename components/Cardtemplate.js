@@ -1,19 +1,49 @@
 import React from 'react'
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Row, Button, Col, Card } from 'react-bootstrap';
 
 function card() {
     return (
-      <Card className="bg-dark text-white">
-        <Card.Img src="holder.js/100px270" alt="Card image" />
-        <Card.ImgOverlay>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </Card.Text>
-          <Card.Text>Last updated 3 mins ago</Card.Text>
-        </Card.ImgOverlay>
-      </Card>
+      <Row xs={1} md={3} className="g-4">
+        <Col>
+          <Card style={{ width: '20rem' }}>
+            <Card.Img src={'/cargo.jpg'} alt="Card image" />;
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Card.Text>
+              ✨✨✨✨✨
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{ width: '20rem' }}>
+            <Card.Img src={'/1.jpg'} alt="Card image" />;
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Card.Text>
+              ✨✨✨✨
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card style={{ width: '20rem' }}>
+            <Card.Img src={'/3.jpg'} alt="Card image" />;
+            <Card.Body>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </Card.Text>
+              ✨✨✨✨✨
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     );
 }
 
