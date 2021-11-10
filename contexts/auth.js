@@ -46,6 +46,7 @@ export function AuthProvider(props) {
       user: null,
     };
     setState((prevState) => ({ ...prevState, ...newState }));
+    router.push('/');
   }
 
   async function register(email, password) {
