@@ -37,8 +37,8 @@ function Dropdown() {
 
   console.log(origins);
   return (
-    <div>
-      <FormControl sx={{ m: 3, minWidth: 120 }}>
+    <div className='dropdown'>
+      <FormControl sx={{ m: 3, minWidth: 120, ml:50, mb: 40 }}>
         <InputLabel htmlFor="grouped-native-select">Origin</InputLabel>
         <Select
           native

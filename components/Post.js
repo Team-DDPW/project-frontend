@@ -1,11 +1,38 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import Date from './Date';
+import { useFormFields } from '../components/hooks';
 
 function Post() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [itemName, setitemName] = useState('');
+  const [itemDescription, setitemDescription] = useState('');
+  const [weight, setWeight] = useState('');
+  const [oCountry, setOCountry] = useState('');
+  const [dCountry, setDCountry] = useState('');
+  const [deadline, setDeadline] = useState('');
+  const [priceOffer, setPriceOffer] = useState('');
+
+  // const [state, setState] = useState({ itemName: '', itemDescription: '' });
+
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setState((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
+  const [fields, handleFieldChange] = useFormFields({
+    itemName: '',
+    itemDescription: '',
+  });
+
+  const onSubmit = () => {
+    console.log(fields);
+  };
 
   return (
     <>
@@ -22,13 +49,22 @@ function Post() {
             <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>Item Name</Form.Label>
-                <Form.Control placeholder="Document / Package" />
+                <Form.Control
+                  autoFocus
+                  type="email"
+                  value={fields.email}
+                  onChange={handleFieldChange}
+                />
               </Form.Group>
             </Row>
 
             <Form.Group className="mb-3" controlId="formGridAddress1">
               <Form.Label>Item Description</Form.Label>
-              <Form.Control placeholder="Detailed Item Description" />
+              <Form.Control
+                type="password"
+                value={fields.password}
+                onChange={handleFieldChange}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formGridAddress2">
@@ -72,7 +108,7 @@ function Post() {
           <Button variant="secondary" onClick={handleClose}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" className="btnFormSend" onClick={onSubmit}>
             Save Changes
           </Button>
         </Modal.Footer>
