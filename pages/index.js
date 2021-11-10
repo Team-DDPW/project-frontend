@@ -10,7 +10,7 @@
 //         <Heading />
 //       </main>
 //     </Layout>
-    
+
 //   );
 // }
 
@@ -18,10 +18,13 @@ import styled from 'styled-components';
 import Layout from '../components/Layout';
 import dynamic from 'next/dynamic';
 import Heading from '../components/Heading';
-import Header from '../components/Header'
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Dropdown from '../components/Dropdown';
-import Cardtemplate from '../components/Cardtemplate'
+import Cardtemplate from '../components/Cardtemplate';
+
+import { useAuth } from '../contexts/auth';
+
 const BgImage = dynamic(() => import('../components/BGImage'), {
   ssr: false,
 });
@@ -35,20 +38,20 @@ const Wrapper = styled.div`
   bottom: 0;
   justify-content: center;
   align-items: center;
-
 `;
 
 export default function Home() {
+  const { user } = useAuth();
+  console.log('user:', user);
   return (
     <>
       <Wrapper>
         <Header />
-        <Dropdown/>
-        <Cardtemplate/>
+        <Dropdown />
+        <Cardtemplate />
       </Wrapper>
 
       <BgImage />
     </>
   );
 }
-
