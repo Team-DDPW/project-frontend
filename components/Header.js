@@ -51,9 +51,15 @@ function Header() {
                   </Nav.Link>
                 </>
               ) : (
-                <Nav.Link href="/signin">
-                  <FaUser size={56} />
-                </Nav.Link>
+                <>
+                  <Nav.Link href="/signin">
+                    <FaUser size={56} />
+                  </Nav.Link>
+
+                  
+                    <Post />
+                  
+                </>
               )}
             </Nav>
           </Offcanvas.Body>
