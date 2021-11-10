@@ -35,10 +35,9 @@ function Dropdown() {
     // empty dependency array means this effect will only run once (like componentDidMount in classes)
   }, []);
 
-  console.log(origins);
   return (
-    <div className='dropdown'>
-      <FormControl sx={{ m: 3, minWidth: 120, ml:50, mb: 40 }}>
+    <div className="dropdown">
+      <FormControl sx={{ m: 3, minWidth: 120, ml: 50, mb: 40 }}>
         <InputLabel htmlFor="grouped-native-select">Origin</InputLabel>
         <Select
           native
