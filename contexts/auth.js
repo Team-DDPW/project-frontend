@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 const tokenUrl = baseUrl + '/api/token/';
-
+const registerUrl = baseUrl + '/accounts/api/register';
 const AuthContext = createContext();
 
 export function useAuth() {
@@ -20,6 +20,7 @@ export function AuthProvider(props) {
     user: null,
     login,
     logout,
+    register,
   });
   const router = useRouter();
 
@@ -37,6 +38,7 @@ export function AuthProvider(props) {
     };
     setState((prevState) => ({ ...prevState, ...newState }));
     console.log('state.tokens', state.tokens);
+    console.log('a user has logged in');
     router.push('/');
   }
 
@@ -47,7 +49,12 @@ export function AuthProvider(props) {
       user: null,
     };
     setState((prevState) => ({ ...prevState, ...newState }));
-    console.log('line 48', state.tokens);
+    router.push('/');
+  }
+
+  async function register(email, password) {
+    const response = await axios.post(registerUrl, { email, password });
+    login(email, password);
   }
 
   return (

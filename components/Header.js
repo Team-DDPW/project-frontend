@@ -27,7 +27,9 @@ function Header() {
   return (
     <Navbar bg="primary" expand={false}>
       <Container fluid>
-        <Navbar.Brand href="/">FastEx</Navbar.Brand>
+        <Navbar.Brand >
+          <Link href="/">FastEx</Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
           id="offcanvasNavbar"
@@ -40,7 +42,7 @@ function Header() {
               {user ? (
                 <>
                   <LogoutButton className="menubtn" />
-                  <Button variant="primary" className="menubtn">
+                  <Button className="menubtn">
                     <Link href="/listings">Listings</Link>
                   </Button>
                   <Post />

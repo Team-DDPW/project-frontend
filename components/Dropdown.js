@@ -20,70 +20,15 @@ function Dropdown() {
     },
   });
 
-  // const fetchOrigins = useCallback(async () => {
-  //   try {
-  //     const response = await authAxios.get(`/country/list`);
-  //     console.log(response.data.countries);
-  //     setOrigins(response.data.countries);
-  //   } catch (err) {}
-  // });
-
   useEffect(() => {
-    // GET request using axios inside useEffect React hook
+
     authAxios
       .get(`/country/list`)
       .then((response) => setOrigins(response.data.countries));
 
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
   }, []);
 
   console.log(origins);
-  //   return (
-  //     <Container>
-  //       <Row>
-  //         <Col sm={5}>
-  //           <FormControl sx={{ mb: 40 }}>
-  //             <InputLabel htmlFor="grouped-native-select">Origin</InputLabel>
-  //             <Select
-  //               native
-  //               defaultValue=""
-  //               id="grouped-native-select"
-  //               label="Grouping"
-  //               // onClick={() => fetchOrigins()}
-  //             >
-  //               <option aria-label="None" value="" />
-  //               {Object.keys(origins).map((key, i) => (
-  //                 <option>{origins[key]}</option>
-  //               ))}
-  //             </Select>
-  //           </FormControl>
-  //         </Col>
-  //         <Col sm={5}>
-  //           <FormControl>
-  //             <InputLabel htmlFor="grouped-native-select">Destination</InputLabel>
-  //             <Select
-  //               native
-  //               defaultValue=""
-  //               id="grouped-native-select"
-  //               label="Grouping"
-  //             >
-  //               <option aria-label="None" value="" />
-
-  //               {Object.keys(destinations).map((key, i) => (
-  //                 <option>{destinations[key]}</option>
-  //               ))}
-  //             </Select>
-  //           </FormControl>
-  //         </Col>
-  //         <Col sm={2}>
-  //           <Button variant="contained">Search</Button>
-  //         </Col>
-  //       </Row>
-  //     </Container>
-  //   );
-  // }
-
-  // export default Dropdown;
 
   return (
     <Container>
