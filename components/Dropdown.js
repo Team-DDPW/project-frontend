@@ -25,6 +25,7 @@ function Dropdown() {
     authAxios
       .get(`/country/list`)
       .then((response) => setOrigins(response.data.countries));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // console.log(origins);
@@ -32,19 +33,19 @@ function Dropdown() {
   return (
     <Container>
       <Row className="dropdownrow">
-        <Col >
+        <Col>
           <Form.Select aria-label="Default select example">
             <option>Origin</option>
             {Object.keys(origins).map((key, i) => (
-              <option>{origins[key]}</option>
+              <option key={i}>{origins[key]}</option>
             ))}
           </Form.Select>
         </Col>
-        <Col >
+        <Col>
           <Form.Select aria-label="Default select example">
             <option>Destination</option>
             {Object.keys(destinations).map((key, i) => (
-              <option>{destinations[key]}</option>
+              <option key={i}>{destinations[key]}</option>
             ))}
           </Form.Select>
         </Col>

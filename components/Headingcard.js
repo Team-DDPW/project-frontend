@@ -7,7 +7,7 @@ function Headingcard() {
       <Card className="text-center">
         <Card.Header></Card.Header>
         <Card.Body>
-          <Card.Title>Let's Find people who can help you!!</Card.Title>
+          <Card.Title>Lets Find people who can help you!!</Card.Title>
           <Card.Text>
             FastEx has been providing the best services as a platform bringing
             community together. Users gets rewarded for helping people to ship
