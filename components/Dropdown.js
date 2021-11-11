@@ -7,6 +7,7 @@ import axios from 'axios';
 import destinations from '../assets/state.json';
 import { Container, Row, Col } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
+import Link from 'next/link';
 
 function Dropdown() {
   const [origins, setOrigins] = useState([]);
@@ -26,7 +27,7 @@ function Dropdown() {
       .then((response) => setOrigins(response.data.countries));
   }, []);
 
-  console.log(origins);
+  // console.log(origins);
 
   return (
     <Container>
@@ -48,7 +49,9 @@ function Dropdown() {
           </Form.Select>
         </Col>
         <Col>
-          <Button variant="primary">Search</Button>
+          <Button variant="primary">
+            <Link href="/listings">Search</Link>
+          </Button>
         </Col>
       </Row>
     </Container>

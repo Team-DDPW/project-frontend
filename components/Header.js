@@ -25,44 +25,9 @@ import { RiMessengerLine } from 'react-icons/ri';
 function Header() {
   const { user, logout } = useAuth();
 
-  console.log('User from Header', user);
+  // console.log('User from Header', user);
 
   return (
-    // <Navbar bg="primary" expand={false}>
-    //   <Container fluid>
-    //     <Navbar.Brand >
-    //       <Link href="/" className='textcolor'>FastEx</Link>
-    //     </Navbar.Brand>
-    //     <Navbar.Toggle aria-controls="offcanvasNavbar" />
-    //     <Navbar.Offcanvas
-    //       id="offcanvasNavbar"
-    //       aria-labelledby="offcanvasNavbarLabel"
-    //       placement="end"
-    //     >
-    //       <Offcanvas.Header closeButton></Offcanvas.Header>
-    //       <Offcanvas.Body>
-    //         <Nav className="justify-content-end flex-grow-1 pe-3 ">
-    //           {user ? (
-    //             <>
-    //               <LogoutButton className="menubtn" />
-    //               <Button className="menubtn">
-    //                 <Link href="/listings">Listings</Link>
-    //               </Button>
-    //               <Post />
-    //             </>
-    //           ) : (
-    //             <Nav.Link href="/signin">
-    //               <Button variant="primary">
-    //                 <Link href="/signin">Signin</Link>
-    //               </Button>
-    //             </Nav.Link>
-    //           )}
-    //         </Nav>
-    //       </Offcanvas.Body>
-    //     </Navbar.Offcanvas>
-    //   </Container>
-    // </Navbar>
-
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Container>
         <Navbar.Brand>
