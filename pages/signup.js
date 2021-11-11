@@ -14,8 +14,6 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useAuth } from '../contexts/auth';
 
-import { useAuth } from '../contexts/auth';
-
 function Copyright(props) {
   return (
     <Typography

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import Date from './Date';
+import { useFormFields } from './hooks';
 
 function Post() {
   const [show, setShow] = useState(false);
@@ -21,7 +22,7 @@ function Post() {
 
       <Modal show={show} onHide={handleClose} animation={false}>
         <Modal.Header closeButton>
-          <Modal.Title>Let's Create Your Post!</Modal.Title>
+          <Modal.Title>Lets Create Your Post!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>

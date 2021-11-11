@@ -16,7 +16,7 @@ export default function useResource() {
 
     try {
       const response = await axios.get(url, config());
-
+      // console.log('🚀 ~ response.data line 22: ', response.data);
       return response.data;
     } catch (error) {
       handleError(error);
@@ -49,6 +49,7 @@ export default function useResource() {
 
   // helper function to handle getting Authorization headers EXACTLY right
   function config() {
+    // console.log('we got to line 55');
     return {
       headers: {
         Authorization: 'Bearer ' + tokens.access,

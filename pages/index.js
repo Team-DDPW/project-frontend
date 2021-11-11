@@ -42,7 +42,7 @@ const Wrapper = styled.div`
 
 export default function Home() {
   const { user } = useAuth();
-  console.log('user:', user);
+  // console.log('user in index:', user);
   return (
     <>
       <Wrapper>

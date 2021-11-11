@@ -22,12 +22,12 @@ import { RiLogoutBoxFill } from 'react-icons/ri';
 function Header() {
   const { user, logout } = useAuth();
 
-  console.log('User from Header', user);
+  // console.log('User from Header', user);
 
   return (
     <Navbar bg="primary" expand={false}>
       <Container fluid>
-        <Navbar.Brand >
+        <Navbar.Brand>
           <Link href="/">FastEx</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
