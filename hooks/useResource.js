@@ -25,7 +25,10 @@ export default function useResource() {
 
   async function createResource(info) {
     try {
-      await axios.post(apiUrl, info, config());
+      console.log('line 28');
+      const response = await axios.post(apiUrl, info, config());
+      console.log('🚀 ~ response line 29: ', response);
+
       mutate(); // mutate causes complete collection to be refetched
     } catch (error) {
       handleError(error);
