@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import Date from './Date';
 import { useFormFields } from './hooks';
+import useResource from '../hooks/useResource.js';
 
 function Post() {
   const [show, setShow] = useState(false);
@@ -9,9 +10,11 @@ function Post() {
   const handleShow = () => setShow(true);
 
   const [fields, handleFieldChange] = useFormFields({});
+  const { createResource } = useResource();
 
   const onSubmit = () => {
     console.log('fields line 34', fields);
+    createResource(fields);
   };
 
   return (
@@ -64,7 +67,7 @@ function Post() {
             </Row>
 
             <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridCity">
+              <Form.Group as={Col} controlId="offer_price">
                 <Form.Label>Price Offer</Form.Label>
                 <Form.Control onChange={handleFieldChange} />
               </Form.Group>
