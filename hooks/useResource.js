@@ -61,11 +61,11 @@ export default function useResource() {
   }
 
   function handleError(error) {
-    console.error(error);
+    console.error("There's an error in userResource:", error);
     // currently just log out on error
     // but a common error will be short lived token expiring
     // STRETCH: refresh the access token when it has expired
-    logout();
+    // logout();
   }
 
   return {
