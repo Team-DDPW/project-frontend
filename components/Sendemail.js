@@ -6,7 +6,7 @@ import { FaEnvelope } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import { useRef } from 'react';
 
-function sendemail() {
+function Sendemail() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -45,7 +45,7 @@ function sendemail() {
         onSubmit={sendEmail}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Let's Connect with the requestor!</Modal.Title>
+          <Modal.Title>Lets Connect with the requestor!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form ref={form} onSubmit={sendEmail}>
@@ -70,4 +70,4 @@ function sendemail() {
     </>
   );
 }
-export default sendemail;
+export default Sendemail;

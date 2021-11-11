@@ -1,7 +1,7 @@
-import React from "react";
-import dynamic from "next/dynamic";
-import styled from "styled-components";
-import Form from "../components/Form";
+import React from 'react';
+import dynamic from 'next/dynamic';
+import styled from 'styled-components';
+// import Form from "../components/Form";
 
 const Wrapper = styled.div`
   z-index: 1;
@@ -18,20 +18,18 @@ const Card = styled.div`
   backgroundcolor: rgba(256, 256, 256, 0.9);
 `;
 
-const BackgroundImage = dynamic(() => import("../components/BackgroundImage"), {
-  ssr: false,
-  loading: () => <p>...</p>,
-});
+// const BackgroundImage = dynamic(() => import('../components/BackgroundImage'), {
+//   ssr: false,
+//   loading: () => <p>...</p>,
+// });
 
 const Example = () => {
   return (
     <>
       <Wrapper>
-        <Card>
-          <Form />
-        </Card>
+        <Card>{/* <Form /> */}</Card>
       </Wrapper>
-      <BackgroundImage />
+      {/* <BackgroundImage /> */}
     </>
   );
 };

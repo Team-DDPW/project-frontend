@@ -61,12 +61,11 @@ function List() {
                 </CardContent>
 
                 <CardActions>
-                  <Button size="small">View</Button>
+                  <Button size="small">
+                    <Link href={`/detail/${card}`}>Details</Link>
+                  </Button>
                   <Sendemail />
                 </CardActions>
-                <Link href={`/detail/${card}`}>
-                  <a>To Detail Page</a>
-                </Link>
               </Card>
             </Grid>
           ))}

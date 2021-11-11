@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import styled from "styled-components";
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import styled from 'styled-components';
 
 const Box = styled.div`
   position: fixed;
@@ -37,8 +37,8 @@ function BGImage() {
       setheight(height);
     }
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   if (width && height) {
@@ -46,6 +46,7 @@ function BGImage() {
       <Box>
         <Image
           src={`https://source.unsplash.com/${width}x${height}/?nature,water,mountains,landscape`}
+          alt="background image"
           width={width}
           height={height}
         />
