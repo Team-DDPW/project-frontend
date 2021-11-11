@@ -1,28 +1,10 @@
-// import { createTheme } from '@mui/material/styles';
-
-// import Layout from '../components/Layout';
-// import Heading from '../components/Heading';
-
-// export default function Home() {
-//   return (
-//     <Layout>
-//       <main>
-//         <Heading />
-//       </main>
-//     </Layout>
-
-//   );
-// }
-
 import styled from 'styled-components';
-import Layout from '../components/Layout';
 import dynamic from 'next/dynamic';
-import Heading from '../components/Heading';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Dropdown from '../components/Dropdown';
-import Cardtemplate from '../components/Cardtemplate';
-
+import Crossimage  from '../components/Carousel';
+import Headingcard from '../components/Headingcard'
 import { useAuth } from '../contexts/auth';
 
 const BgImage = dynamic(() => import('../components/BGImage'), {
@@ -47,8 +29,9 @@ export default function Home() {
     <>
       <Wrapper>
         <Header />
-        <Dropdown />
-        <Cardtemplate />
+        {user ? <Dropdown /> : ''}
+        <Crossimage />
+        <Headingcard />
       </Wrapper>
 
       <BgImage />
