@@ -2,9 +2,11 @@ import React, { useState, useCallback, useEffect, Component } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Button from '@mui/material/Button';
+import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import destinations from '../assets/state.json';
+import { Container, Row, Col } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 
 function Dropdown() {
   const [origins, setOrigins] = useState([]);
@@ -18,59 +20,38 @@ function Dropdown() {
     },
   });
 
-  // const fetchOrigins = useCallback(async () => {
-  //   try {
-  //     const response = await authAxios.get(`/country/list`);
-  //     console.log(response.data.countries);
-  //     setOrigins(response.data.countries);
-  //   } catch (err) {}
-  // });
-
   useEffect(() => {
-    // GET request using axios inside useEffect React hook
     authAxios
       .get(`/country/list`)
       .then((response) => setOrigins(response.data.countries));
-
-    // empty dependency array means this effect will only run once (like componentDidMount in classes)
   }, []);
 
-  return (
-    <div className="dropdown">
-      <FormControl sx={{ m: 3, minWidth: 120, ml: 50, mb: 40 }}>
-        <InputLabel htmlFor="grouped-native-select">Origin</InputLabel>
-        <Select
-          native
-          defaultValue=""
-          id="grouped-native-select"
-          label="Grouping"
-          // onClick={() => fetchOrigins()}
-        >
-          <option aria-label="None" value="" />
-          {Object.keys(origins).map((key, i) => (
-            <option>{origins[key]}</option>
-          ))}
-        </Select>
-      </FormControl>
-      <FormControl sx={{ m: 3, minWidth: 120 }}>
-        <InputLabel htmlFor="grouped-native-select">Destination</InputLabel>
-        <Select
-          native
-          defaultValue=""
-          id="grouped-native-select"
-          label="Grouping"
-        >
-          <option aria-label="None" value="" />
+  console.log(origins);
 
-          {Object.keys(destinations).map((key, i) => (
-            <option>{destinations[key]}</option>
-          ))}
-        </Select>
-      </FormControl>
-      <Button variant="contained" sx={{ mt: 4 }}>
-        Search
-      </Button>
-    </div>
+  return (
+    <Container>
+      <Row className="dropdownrow">
+        <Col col-md-offset-2>
+          <Form.Select aria-label="Default select example">
+            <option>Origin</option>
+            {Object.keys(origins).map((key, i) => (
+              <option>{origins[key]}</option>
+            ))}
+          </Form.Select>
+        </Col>
+        <Col col-md-offset-2>
+          <Form.Select aria-label="Default select example">
+            <option>Destination</option>
+            {Object.keys(destinations).map((key, i) => (
+              <option>{destinations[key]}</option>
+            ))}
+          </Form.Select>
+        </Col>
+        <Col>
+          <Button variant="primary">Search</Button>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

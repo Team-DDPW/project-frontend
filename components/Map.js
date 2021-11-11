@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const containerStyle = {
   width: '750px',
-  height: '500px',
+  height: '700px',
   marginTop: '100px',
   marginLeft: '65px',
 };

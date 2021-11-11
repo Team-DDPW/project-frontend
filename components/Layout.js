@@ -1,19 +1,19 @@
-import Head from 'next/head';
-import Header from './Header';
+// import Head from 'next/head';
+// import Header from './Header';
 
-import Image from 'next/image';
+// import Image from 'next/image';
 
-function Layout({ children }) {
-  return (
-    <div>
-      <Head>
-        <title>FastEx</title>
-      </Head>
-      <Header />
-      {children}
+// function Layout({ children }) {
+//   return (
+//     <div>
+//       <Head>
+//         <title>FastEx</title>
+//       </Head>
+//       <Header />
+//       {children}
 
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
-export default Layout;
+// export default Layout;

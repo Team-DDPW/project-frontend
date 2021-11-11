@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import Date from './Date';
-import { useFormFields } from '../components/hooks';
 
 function Post() {
   const [show, setShow] = useState(false);
@@ -16,7 +15,7 @@ function Post() {
 
   return (
     <>
-      <Button variant="text" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow}>
         Create Post
       </Button>
 
