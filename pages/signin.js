@@ -15,24 +15,16 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Copyright from '../components/Copyright';
 
 import { useAuth } from '../contexts/auth';
-// import { useRouter } from 'next/router';
 
 const theme = createTheme();
 
 export default function SignIn() {
   const { login } = useAuth();
-  // const router = useRouter();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
     login(data.get('email'), data.get('password'));
-    // router.push('/');
   };
 
   return (
