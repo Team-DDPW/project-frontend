@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import Date from './Date';
-import { useFormFields } from '../components/hooks';
 
 function Post() {
   const [show, setShow] = useState(false);
@@ -25,18 +24,15 @@ function Post() {
   //     [name]: value,
   //   }));
   // };
-  const [fields, handleFieldChange] = useFormFields({
-    itemName: '',
-    itemDescription: '',
-  });
 
   const onSubmit = () => {
-    console.log(fields);
+    console.log(itemName);
+    console.log(itemDescription);
   };
 
   return (
     <>
-      <Button variant="text" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow}>
         Create Post
       </Button>
 
@@ -50,10 +46,10 @@ function Post() {
               <Form.Group as={Col} controlId="formGridEmail">
                 <Form.Label>Item Name</Form.Label>
                 <Form.Control
-                  autoFocus
-                  type="email"
-                  value={fields.email}
-                  onChange={handleFieldChange}
+                  className="form-control"
+                  type="text"
+                  onChange={(e) => setitemName({ itemName: e.target.value })}
+                  placeholder="Document / Package"
                 />
               </Form.Group>
             </Row>
@@ -61,9 +57,12 @@ function Post() {
             <Form.Group className="mb-3" controlId="formGridAddress1">
               <Form.Label>Item Description</Form.Label>
               <Form.Control
-                type="password"
-                value={fields.password}
-                onChange={handleFieldChange}
+                className="form-control"
+                type="text"
+                onChange={(e) =>
+                  setitemDescription({ itemDescription: e.target.value })
+                }
+                placeholder="Detailed Item Description"
               />
             </Form.Group>
 

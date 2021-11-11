@@ -4,27 +4,54 @@ import Layout from '../components/Layout';
 import List from '../components/List';
 import Map from '../components/Map';
 import { Sticky, StickyScrollUp, StickyProvider } from 'react-stickup';
+import { Container, Row, Col } from 'react-bootstrap';
+import Head from 'next/head';
+import Header from '../components/Header';
+import dynamic from 'next/dynamic';
+import styled from 'styled-components';
+
+const BgImage = dynamic(() => import('../components/BGImage'), {
+  ssr: false,
+});
 
 const container = React.createRef();
 
+const Wrapper = styled.div`
+  display: flex-grow;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+`;
+
+
 function Listings() {
   return (
-    <Layout>
-      <StickyProvider>
-        <Grid container spacing={4}>
-          <Grid item lg={4}>
-            <List />
-          </Grid>
-          <div ref={container}>
-            <Sticky container={container}>
-              <Grid item lg={8}>
-                <Map />
-              </Grid>
-            </Sticky>
-          </div>
-        </Grid>
-      </StickyProvider>
-    </Layout>
+    <>
+      <Wrapper>
+        <Row>
+          <Header />
+        </Row>
+        <Container>
+          <Row>
+            <StickyProvider>
+              <Col>
+                <List />
+              </Col>
+              <Col>
+                <Sticky>
+                  <Map />
+                </Sticky>
+              </Col>
+            </StickyProvider>
+          </Row>
+        </Container>
+      </Wrapper>
+      <BgImage />
+    </>
   );
 }
 
