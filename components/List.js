@@ -19,7 +19,7 @@ function List() {
 
   const { resources, loading } = useResource();
 
-  console.log('resources line 22: ', resources);
+  // console.log('resources line 22: ', resources);
 
   return (
     <Container sx={{ py: 8 }} maxWidth="md">
