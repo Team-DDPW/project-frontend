@@ -50,8 +50,13 @@ export function AuthProvider(props) {
     router.push('/');
   }
 
-  async function register(email, password) {
-    const response = await axios.post(registerUrl, { email, password });
+  async function register(email, password, first_name, last_name) {
+    const response = await axios.post(registerUrl, {
+      email,
+      password,
+      first_name,
+      last_name,
+    });
     login(email, password);
   }
 
