@@ -21,11 +21,9 @@ function Dropdown() {
   });
 
   useEffect(() => {
-
     authAxios
       .get(`/country/list`)
       .then((response) => setOrigins(response.data.countries));
-
   }, []);
 
   console.log(origins);
