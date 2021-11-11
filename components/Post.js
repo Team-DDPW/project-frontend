@@ -16,7 +16,7 @@ function Post() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="text" onClick={handleShow}>
         Create Post
       </Button>
 

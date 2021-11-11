@@ -1,6 +1,4 @@
-import { Grid } from '@mui/material';
 import React from 'react';
-import Layout from '../components/Layout';
 import List from '../components/List';
 import Map from '../components/Map';
 import { Sticky, StickyScrollUp, StickyProvider } from 'react-stickup';

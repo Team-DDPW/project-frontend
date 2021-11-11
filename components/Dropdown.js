@@ -32,7 +32,7 @@ function Dropdown() {
   return (
     <Container>
       <Row className="dropdownrow">
-        <Col col-md-offset-2>
+        <Col >
           <Form.Select aria-label="Default select example">
             <option>Origin</option>
             {Object.keys(origins).map((key, i) => (
@@ -40,7 +40,7 @@ function Dropdown() {
             ))}
           </Form.Select>
         </Col>
-        <Col col-md-offset-2>
+        <Col >
           <Form.Select aria-label="Default select example">
             <option>Destination</option>
             {Object.keys(destinations).map((key, i) => (
@@ -49,7 +49,7 @@ function Dropdown() {
           </Form.Select>
         </Col>
         <Col>
-          <Button variant="primary">
+          <Button variant="text">
             <Link href="/listings">Search</Link>
           </Button>
         </Col>
