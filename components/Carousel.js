@@ -5,7 +5,7 @@ import Carousel from 'react-bootstrap/Carousel';
 function Crossimage() {
   return (
     <div
-      style={{ display: 'flex', width: '50%', padding: 100, margin: 'auto' }}
+      style={{ display: 'flex', width: '50%', padding: 80, margin: 'auto' }}
     >
       <Carousel>
         <Carousel.Item interval={2000}>

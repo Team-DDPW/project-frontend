@@ -29,11 +29,18 @@ export default function Home() {
     <>
       <Wrapper>
         <Header />
-        {user ? <Dropdown /> : ''}
-        <Crossimage />
-        <Headingcard />
+        {user ? (
+          <>
+            <Dropdown />
+            <Crossimage />
+          </>
+        ) : (
+          <>
+          <Crossimage />
+          <Headingcard />
+          </>
+        )}
       </Wrapper>
-
       <BgImage />
     </>
   );

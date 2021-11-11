@@ -49,7 +49,7 @@ function Dropdown() {
           </Form.Select>
         </Col>
         <Col>
-          <Button variant="primary">
+          <Button variant="text">
             <Link href="/listings">Search</Link>
           </Button>
         </Col>
