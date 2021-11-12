@@ -54,7 +54,7 @@ body {
 a.textcolor {
   color: white;
 }
-.SearchIcon{
+.SearchIcon {
   font-size: 40px;
 }
 
@@ -62,6 +62,7 @@ a.textcolor {
   .SearchIcon {
     font-size: 20px;
   }
-  
 }
-
+.mb-3 {
+  padding-top: 10px;
+}

@@ -19,7 +19,7 @@ function Map() {
     <Container fluid>
       <Row>
         <Col>
-          <LoadScript googleMapsApiKey="">
+          <LoadScript googleMapsApiKey="AIzaSyC5BvRIbwnwfsZiON0Pg8W_KUrSLJ5cFoQ">
             <GoogleMap
               mapContainerStyle={containerStyle}
               center={center}

@@ -36,16 +36,16 @@ function Dropdown() {
         <Col>
           <Form.Select aria-label="Default select example">
             <option>Origin</option>
-            {Object.keys(origins).map((key, i) => (
-              <option key={i}>{origins[key]}</option>
+            {Object.keys(destinations).map((key, i) => (
+              <option key={i}>{destinations[key]}</option>
             ))}
           </Form.Select>
         </Col>
         <Col>
           <Form.Select aria-label="Default select example">
             <option>Destination</option>
-            {Object.keys(destinations).map((key, i) => (
-              <option key={i}>{destinations[key]}</option>
+            {Object.keys(origins).map((key, i) => (
+              <option key={i}>{origins[key]}</option>
             ))}
           </Form.Select>
         </Col>

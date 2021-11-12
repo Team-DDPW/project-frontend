@@ -41,9 +41,13 @@ function Header() {
           {/* <Navbar.Brand>
             <RiMessengerLine size={28} />
           </Navbar.Brand> */}
+          {user ? 
           <Navbar.Brand>
             <Post />
           </Navbar.Brand>
+          :
+          ""
+          }
           <Nav>
             <NavDropdown
               title={<FaUserAlt size={28} />}
