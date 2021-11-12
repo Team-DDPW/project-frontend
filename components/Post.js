@@ -51,7 +51,7 @@ function Post() {
 
             <Row className="mb-3">
               <Form.Group as={Col} controlId="origin_country">
-                <Form.Label>Country of Origin</Form.Label>
+                <Form.Label>Origin State</Form.Label>
                 <Form.Control onChange={handleFieldChange} />
               </Form.Group>
 
@@ -73,10 +73,10 @@ function Post() {
               </Form.Group>
             </Row>
 
-            <Form.Group controlId="formFile" className="mb-3">
+            {/* <Form.Group controlId="formFile" className="mb-3">
               <Form.Label>Default file input example</Form.Label>
               <Form.Control type="file" />
-            </Form.Group>
+            </Form.Group> */}
           </Form>
         </Modal.Body>
 

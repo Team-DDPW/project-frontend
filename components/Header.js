@@ -40,10 +40,10 @@ function Header() {
           <Nav className="me-auto"></Nav>
           {/* <Navbar.Brand>
             <RiMessengerLine size={28} />
-          </Navbar.Brand>
-          <Navbar.Brand>
-            <MdOutlineNotificationsActive size={28} />
           </Navbar.Brand> */}
+          <Navbar.Brand>
+            <Post />
+          </Navbar.Brand>
           <Nav>
             <NavDropdown
               title={<FaUserAlt size={28} />}
@@ -56,9 +56,9 @@ function Header() {
                       <Link href="/listings">Listings</Link>
                     </Button>
                   </NavDropdown.Item>
-                  <NavDropdown.Item>
+                  {/* <NavDropdown.Item>
                     <Post />
-                  </NavDropdown.Item>
+                  </NavDropdown.Item> */}
                   <NavDropdown.Item>
                     <LogoutButton className="menubtn" />
                   </NavDropdown.Item>
