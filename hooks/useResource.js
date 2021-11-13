@@ -16,7 +16,6 @@ export default function useResource() {
 
     try {
       const response = await axios.get(url, config());
-      // console.log('🚀 ~ response.data line 22: ', response.data);
       return response.data;
     } catch (error) {
       handleError(error);
@@ -25,11 +24,9 @@ export default function useResource() {
 
   async function createResource(info) {
     try {
-      console.log('line 28');
       const response = await axios.post(apiUrl, info, config());
-      console.log('🚀 ~ response line 29: ', response);
 
-      mutate(); // mutate causes complete collection to be refetched
+      mutate();
     } catch (error) {
       handleError(error);
     }
@@ -39,20 +36,15 @@ export default function useResource() {
     try {
       const url = apiUrl + id;
       await axios.delete(url, config());
-      mutate(); // mutate causes complete collection to be refetched
+      mutate();
     } catch (error) {
       handleError(error);
     }
   }
 
-  async function updateResource(resource) {
-    // STRETCH
-    // Add ability for user to update an existing resource
-  }
+  async function updateResource(resource) {}
 
-  // helper function to handle getting Authorization headers EXACTLY right
   function config() {
-    // console.log('we got to line 55');
     return {
       headers: {
         Authorization: 'Bearer ' + tokens.access,
@@ -62,10 +54,6 @@ export default function useResource() {
 
   function handleError(error) {
     console.error("There's an error in userResource:", error);
-    // currently just log out on error
-    // but a common error will be short lived token expiring
-    // STRETCH: refresh the access token when it has expired
-    // logout();
   }
 
   return {

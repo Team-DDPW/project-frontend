@@ -28,8 +28,6 @@ function Dropdown() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // console.log(origins);
-
   return (
     <Container>
       <Row className="dropdownrow">

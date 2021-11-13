@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import dynamic from 'next/dynamic';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Dropdown from '../components/Dropdown';
-import Crossimage  from '../components/Carousel';
-import Headingcard from '../components/Headingcard'
+import Crossimage from '../components/Carousel';
+import Headingcard from '../components/Headingcard';
 import { useAuth } from '../contexts/auth';
 
 const BgImage = dynamic(() => import('../components/BGImage'), {
@@ -24,7 +23,6 @@ const Wrapper = styled.div`
 
 export default function Home() {
   const { user } = useAuth();
-  // console.log('user in index:', user);
   return (
     <>
       <Wrapper>
@@ -36,8 +34,8 @@ export default function Home() {
           </>
         ) : (
           <>
-          <Crossimage />
-          <Headingcard />
+            <Crossimage />
+            <Headingcard />
           </>
         )}
       </Wrapper>

@@ -28,7 +28,6 @@ export function AuthProvider(props) {
   async function login(email, password) {
     const response = await axios.post(tokenUrl, { email, password });
     const decodedAccess = jwt.decode(response.data.access);
-    console.log('decodedAccess: ', decodedAccess);
     const newState = {
       tokens: response.data,
       user: {
@@ -37,7 +36,6 @@ export function AuthProvider(props) {
       },
     };
     setState((prevState) => ({ ...prevState, ...newState }));
-    console.log('a user has logged in');
     router.push('/');
   }
 

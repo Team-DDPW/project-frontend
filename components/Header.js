@@ -25,8 +25,6 @@ import { RiMessengerLine } from 'react-icons/ri';
 function Header() {
   const { user, logout } = useAuth();
 
-  // console.log('User from Header', user);
-
   return (
     <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
       <Container>
@@ -38,16 +36,14 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto"></Nav>
-          {/* <Navbar.Brand>
-            <RiMessengerLine size={28} />
-          </Navbar.Brand> */}
-          {user ? 
-          <Navbar.Brand>
-            <Post />
-          </Navbar.Brand>
-          :
-          ""
-          }
+
+          {user ? (
+            <Navbar.Brand>
+              <Post />
+            </Navbar.Brand>
+          ) : (
+            ''
+          )}
           <Nav>
             <NavDropdown
               title={<FaUserAlt size={28} />}
@@ -60,9 +56,7 @@ function Header() {
                       <Link href="/listings">Listings</Link>
                     </Button>
                   </NavDropdown.Item>
-                  {/* <NavDropdown.Item>
-                    <Post />
-                  </NavDropdown.Item> */}
+
                   <NavDropdown.Item>
                     <LogoutButton className="menubtn" />
                   </NavDropdown.Item>

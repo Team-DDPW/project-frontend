@@ -24,7 +24,6 @@ function List() {
   const handleSearch = (event) => {
     let value = event.target.value;
     let result = [];
-    console.log(value);
     result = allData.filter((data) => {
       return data.origin_country.search(value) != -1;
     });
@@ -34,10 +33,8 @@ function List() {
   useEffect(() => {
     setAllData(resources);
     setFilteredData(resources);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  console.log('resources line 22: ', filteredData);
-  // console.log('resources line 22: ', resources);
 
   return (
     <>
@@ -64,12 +61,6 @@ function List() {
                 >
                   <CardMedia
                     component="img"
-                    sx={
-                      {
-                        // 16:9
-                        // pt: '56.25%',
-                      }
-                    }
                     image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTpev6JNGxeOkBgVdxwxz2kHsG0_t5LQoIJA&usqp=CAU"
                     alt="random"
                   />
@@ -91,9 +82,7 @@ function List() {
                   </CardContent>
 
                   <CardActions>
-                    <Button size="small">
-                      <Link href={`/detail/${card}`}>Details</Link>
-                    </Button>
+                    <Button size="small">Details</Button>
                     <Sendemail />
                   </CardActions>
                 </Card>

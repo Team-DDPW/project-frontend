@@ -13,7 +13,6 @@ function Post() {
   const { createResource } = useResource();
 
   const onSubmit = () => {
-    console.log('fields line 34', fields);
     createResource(fields);
   };
 
@@ -72,11 +71,6 @@ function Post() {
                 <Form.Control onChange={handleFieldChange} />
               </Form.Group>
             </Row>
-
-            {/* <Form.Group controlId="formFile" className="mb-3">
-              <Form.Label>Default file input example</Form.Label>
-              <Form.Control type="file" />
-            </Form.Group> */}
           </Form>
         </Modal.Body>
 

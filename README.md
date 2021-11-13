@@ -1,6 +1,4 @@
-# Python 401 Final Project
-
-## Project Name: FastEx
+# FastEx
 
 ## Team Sith Lords
 
@@ -27,8 +25,17 @@ Our vision was to create an app where packages can be sent to countries that lac
 
 ## Links and Resources
 
-- [front-End website](https://project-frontend-three.vercel.app/)
-- [FastEx site]()
+- [FastEx site](https://fastex-project.vercel.app/)
 - [Trello](https://trello.com/b/rF1sdqfr/team-ddpw)
 - [Front End Repo](https://github.com/Team-DDPW/project-frontend)
 - [Back End Repo](https://github.com/Team-DDPW/project_backend)
+
+## Getting Started
+
+Make sure to create .env
+
+```env
+NEXT_PUBLIC_SECRET_KEY=**Get from RapidAPI**
+NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_RESOURCE_URL=http://localhost:8000/api/v1/packagerequest
+```

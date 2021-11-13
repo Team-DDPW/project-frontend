@@ -35,7 +35,7 @@ function Sendemail() {
   return (
     <>
       <Button variant="text" onClick={handleShow}>
-        <FaEnvelope onClick={handleShow} size={28}/>
+        <FaEnvelope onClick={handleShow} size={28} />
       </Button>
       <Modal
         show={show}
