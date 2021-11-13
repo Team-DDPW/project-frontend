@@ -1,5 +1,7 @@
 # FastEx
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3427acda-0404-4767-b018-e0cab9cf68cd/deploy-status)](https://app.netlify.com/sites/objective-yalow-fabd6a/deploys)
+
 ## Team Sith Lords
 
 - [Daniel Dills](https://github.com/danieldills)
@@ -25,7 +27,7 @@ Our vision was to create an app where packages can be sent to countries that lac
 
 ## Links and Resources
 
-- [FastEx site](https://fastex-project.vercel.app/)
+- [FastEx site](https://fastex.netlify.app/)
 - [Trello](https://trello.com/b/rF1sdqfr/team-ddpw)
 - [Front End Repo](https://github.com/Team-DDPW/project-frontend)
 - [Back End Repo](https://github.com/Team-DDPW/project_backend)
